@@ -328,10 +328,9 @@ export function Hero() {
         <div className="hero-sub">
           <div className="hero-left">
             <p className="hero-tagline">
-              Full-stack engineer &amp; systems builder.
-              <br />
-              I turn <em>practical ideas into robust products</em> <br />
-              from high-scale web platforms to applied AI and hardware integrations.
+              Full-stack engineer &amp; systems builder. I turn{' '}
+              <em>practical ideas into robust products</em> from high-scale web platforms to applied
+              AI and hardware integrations.
             </p>
             <div className="hero-actions">
               <a className="hero-btn-primary" href="#projects">
