@@ -383,7 +383,7 @@ export function Hero() {
             <div className="hero-status">
               <span className="status-dot" />
               <span>{site.status}</span>
-              <span style={{ marginLeft: 'auto', opacity: 0.6 }}>IIITDM Jabalpur</span>
+              <span className="status-inst">IIITDM Jabalpur</span>
             </div>
             <DevConsole />
             <div className="visual-foot">
