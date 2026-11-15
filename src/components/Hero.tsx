@@ -26,14 +26,19 @@ function WordReveal({
   const reduced = useReducedMotion();
   const words = text.split(' ');
   return (
-    <span className={className} aria-label={text} style={{ display: 'inline-block' }}>
+    <span className={className} aria-label={text} style={{ display: 'inline-block', maxWidth: '100%' }}>
       {words.map((word, i) => (
         <span
           key={i}
-          style={{ display: 'inline-block', overflow: 'hidden', verticalAlign: 'bottom' }}
+          style={{
+            display: 'inline-block',
+            overflow: 'hidden',
+            verticalAlign: 'bottom',
+            maxWidth: '100%',
+          }}
         >
           <m.span
-            style={{ display: 'inline-block', paddingRight: '0.25em' }}
+            style={{ display: 'inline-block', paddingRight: '0.08em' }}
             initial={reduced ? false : { y: '110%', opacity: 0 }}
             animate={{ y: '0%', opacity: 1 }}
             transition={{ duration: 0.7, delay: delay + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
