@@ -1,0 +1,901 @@
+/* ── CONTRIFLOW 3-CARD SHOWCASE STAGE ──────────────────────── */
+
+.contriflow-showcase-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+  background-color: #FAF7F2;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  background-size: 22px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Scene Wrapper - Front-Facing with Subtle Rightward Tilt */
+.contriflow-scene-wrapper {
+  position: relative;
+  width: 660px;
+  height: 420px;
+  transform: rotate(1.4deg);
+  transform-origin: center center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  flex-shrink: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Window Card Styles */
+.contriflow-float-tr {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  width: 375px;
+  height: 230px;
+  z-index: 10;
+  will-change: transform;
+}
+
+.contriflow-float-bl {
+  position: absolute;
+  bottom: 12px;
+  left: 10px;
+  width: 355px;
+  height: 230px;
+  z-index: 20;
+  will-change: transform;
+}
+
+.contriflow-float-center {
+  position: absolute;
+  top: 65px;
+  left: 105px;
+  width: 480px;
+  height: 295px;
+  z-index: 30;
+  will-change: transform;
+}
+
+.contriflow-window {
+  width: 100%;
+  height: 100%;
+  background: #0B0F19;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #F8FAFC;
+  overflow: hidden;
+  box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Common Window Titlebar */
+.cflow-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: #111624;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cflow-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cflow-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background: #EF4444;
+}
+
+.dot-yellow {
+  background: #F59E0B;
+}
+
+.dot-green {
+  background: #10B981;
+}
+
+.cflow-brand-mini {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  color: #FFFFFF;
+}
+
+.cflow-brand-mini strong {
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.cflow-logo-mark {
+  font-weight: 800;
+  color: #3B82F6;
+  font-size: 10px;
+}
+
+.cflow-tab-pill {
+  font-size: 8px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  color: #93C5FD;
+  padding: 1.5px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* Button & Chip Primitives */
+.cflow-btn-blue-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 3.5px;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-size: 8px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+}
+
+.cflow-btn-ghost-sm {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #CBD5E1;
+  font-size: 8px;
+  padding: 2.5px 7px;
+  border-radius: 4px;
+}
+
+/* ── 1. TOP-RIGHT BACK WINDOW (LANDING HERO) ───────────────── */
+.contriflow-win-landing {
+  background: #0B0F19;
+}
+
+.cflow-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 7.5px;
+  color: #94A3B8;
+  margin-left: 8px;
+}
+
+.cflow-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.cflow-login-link {
+  font-size: 7.5px;
+  color: #CBD5E1;
+}
+
+.cflow-landing-body {
+  position: relative;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cflow-landing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.28);
+  border-radius: 9999px;
+  padding: 2.5px 8px;
+  font-size: 7.5px;
+  color: #93C5FD;
+  width: fit-content;
+  margin-bottom: 9px;
+}
+
+.cflow-blue-dot {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background: #3B82F6;
+}
+
+.cflow-landing-headline {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+
+.cflow-landing-sub {
+  font-size: 8px;
+  line-height: 1.45;
+  color: #94A3B8;
+  max-width: 250px;
+  margin: 0 0 13px;
+}
+
+.cflow-landing-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cflow-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-size: 8px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.cflow-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #CBD5E1;
+  font-size: 8px;
+  padding: 4px 9px;
+  border-radius: 4px;
+}
+
+.cflow-workflow-card {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  background: #13192A;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  padding: 6px 9px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+}
+
+.cflow-wf-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: rgba(59, 130, 246, 0.2);
+  color: #60A5FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cflow-workflow-card strong {
+  display: block;
+  font-size: 7.5px;
+  color: #FFFFFF;
+}
+
+.cflow-workflow-card span {
+  display: block;
+  font-size: 6.5px;
+  color: #94A3B8;
+}
+
+/* ── 2. BOTTOM-LEFT MID WINDOW (PROJECTS GRID) ─────────────── */
+.contriflow-win-projects {
+  background: #0B0F19;
+}
+
+.cflow-projects-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.cflow-projects-body {
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cflow-projects-title-row {
+  margin-bottom: 8px;
+}
+
+.cflow-h-flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cflow-h-flex h5 {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.cflow-num-badge {
+  font-size: 7.5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 1px 6px;
+  color: #E2E8F0;
+}
+
+.cflow-projects-title-row p {
+  font-size: 7.5px;
+  color: #94A3B8;
+  margin: 2px 0 0;
+}
+
+.cflow-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  gap: 8px;
+}
+
+.cflow-search-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #151C2C;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3.5px 8px;
+  border-radius: 4px;
+  font-size: 7.5px;
+  color: #64748B;
+  flex: 1;
+}
+
+.cflow-filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 7px;
+  color: #94A3B8;
+}
+
+.cflow-filter-tabs span {
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.cflow-filter-tabs span.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.cflow-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.cflow-proj-tile {
+  background: #131928;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 62px;
+}
+
+.cflow-tile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.cflow-avatar-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7.5px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.av-dfp {
+  background: #1E3A8A;
+  color: #93C5FD;
+}
+
+.av-hack {
+  background: #065F46;
+  color: #6EE7B7;
+}
+
+.av-club {
+  background: #0284C7;
+  color: #E0F2FE;
+}
+
+.av-club-lg {
+  width: 24px;
+  height: 24px;
+  background: #0284C7;
+  color: #E0F2FE;
+  font-size: 9px;
+}
+
+.cflow-tile-header strong {
+  display: block;
+  font-size: 7.8px;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.cflow-tile-header small {
+  display: block;
+  font-size: 6.5px;
+  color: #94A3B8;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+.cflow-tile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 3.5px;
+}
+
+.cflow-badge-lead {
+  font-size: 6.5px;
+  font-weight: 700;
+  background: #2563EB;
+  color: #FFFFFF;
+  padding: 0.5px 4px;
+  border-radius: 3px;
+  letter-spacing: 0.4px;
+}
+
+.cflow-tile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 7px;
+  color: #64748B;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 4px;
+}
+
+/* ── 3. CENTER FOREGROUND WINDOW (ACTIVE WORKSPACE) ────────── */
+.contriflow-win-workspace {
+  background: #0D111E;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 30px 65px -10px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.cflow-tb-workspace {
+  padding: 8px 14px;
+  background: #131929;
+}
+
+.cflow-ws-user-tray {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: auto;
+}
+
+.cflow-tray-icon {
+  color: #64748B;
+}
+
+.cflow-profile-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 7px;
+  border-radius: 9999px;
+  font-size: 7.5px;
+  color: #E2E8F0;
+}
+
+.cflow-user-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #3B82F6;
+}
+
+.cflow-signout-text {
+  font-size: 7.5px;
+  color: #64748B;
+}
+
+/* Workspace Banner */
+.cflow-ws-banner {
+  padding: 10px 16px;
+  background: #111726;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cflow-ws-club-meta {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.cflow-ws-club-meta h3 {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.cflow-ws-club-meta p {
+  font-size: 7.5px;
+  color: #94A3B8;
+  margin: 1px 0 3px;
+}
+
+.cflow-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 7px;
+  color: #64748B;
+}
+
+.cflow-stats-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 3.5px;
+}
+
+.cflow-ws-cta-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.cflow-invite-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 6.5px;
+  color: #94A3B8;
+  letter-spacing: 0.4px;
+}
+
+.cflow-ws-buttons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cflow-btn-ai {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #1E293B;
+  border: 1px solid rgba(147, 197, 253, 0.3);
+  color: #E2E8F0;
+  font-size: 8px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.cflow-ai-sparkle {
+  color: #60A5FA;
+}
+
+/* Workspace Split Body */
+.cflow-ws-body-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  padding: 11px 14px;
+  gap: 12px;
+}
+
+.cflow-section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 7px;
+}
+
+.cflow-section-title-row h6 {
+  font-size: 9px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.cflow-count-tag {
+  font-size: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #E2E8F0;
+  padding: 1px 5px;
+  border-radius: 9999px;
+}
+
+.cflow-review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cflow-review-item {
+  background: #141B2D;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 5px;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cflow-item-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.cflow-check-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cflow-check-icon.approved {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34D399;
+}
+
+.cflow-check-icon.pending {
+  background: rgba(245, 158, 11, 0.2);
+  color: #FBBF24;
+}
+
+.cflow-check-icon.circle {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cflow-item-left strong {
+  display: block;
+  font-size: 7.8px;
+  color: #F8FAFC;
+  line-height: 1.2;
+}
+
+.cflow-item-left p {
+  display: block;
+  font-size: 6.5px;
+  color: #94A3B8;
+  margin: 1px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 145px;
+}
+
+.cflow-badge-approved {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34D399;
+  font-size: 7px;
+  font-weight: 600;
+  padding: 1.5px 5.5px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+/* Status Pill with Pulsing Amber Dot */
+.cflow-badge-pending-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #FBBF24;
+  font-size: 7px;
+  font-weight: 600;
+  padding: 1.5px 5.5px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.contriflow-pulsing-amber-dot {
+  position: relative;
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background: #F59E0B;
+  display: inline-block;
+}
+
+.contriflow-pulsing-amber-dot::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.7);
+  animation: amberPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes amberPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Right Sidebar Cards */
+.cflow-ws-sidebar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cflow-side-card {
+  background: #141A2B;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.cflow-side-card-title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 7.5px;
+  color: #94A3B8;
+  margin-bottom: 5px;
+}
+
+.cflow-member-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cflow-member-avatar {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #3B82F6;
+  color: #FFFFFF;
+  font-size: 6px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cflow-member-info strong {
+  font-size: 7.8px;
+  color: #F8FAFC;
+}
+
+.cflow-task-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cflow-feed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.cflow-feed-item .feed-dot {
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background: #3B82F6;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.cflow-feed-item strong {
+  display: block;
+  font-size: 7px;
+  color: #E2E8F0;
+  line-height: 1.25;
+}
+
+.cflow-feed-item small {
+  display: block;
+  font-size: 6px;
+  color: #64748B;
+  margin-top: 1px;
+}
+
+/* ── RESPONSIVE SCALING ────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .contriflow-scene-wrapper {
+    transform: scale(0.92) rotate(1.4deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .contriflow-scene-wrapper {
+    transform: scale(0.8) rotate(1.4deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .contriflow-scene-wrapper {
+    transform: scale(0.64) rotate(1.4deg);
+  }
+}
+
+@media (max-width: 440px) {
+  .contriflow-scene-wrapper {
+    transform: scale(0.5) rotate(1.4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contriflow-window {
+    animation: none !important;
+    transition: none !important;
+  }
+  .contriflow-pulsing-amber-dot::after {
+    animation: none !important;
+  }
+}
